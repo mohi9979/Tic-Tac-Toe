@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tic Tac Toe</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <header class="header">
+        <div>
+            <h1>TIC TAC TOE</h1>
+            <p>Classic game • Play anywhere</p>
+        </div>
+    </header>
+
+
+    <!-- HOME SCREEN -->
+    <section id="homeScreen" class="screen">
+
+        <div class="menu-card">
+
+            <h2>Choose Game</h2>
+
+            <button class="menu-btn primary" onclick="showBotGame()">
+                🤖 Play vs Bot
+            </button>
+
+            <button class="menu-btn" onclick="showOnlineGame()">
+                🌐 Play Online
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- BOT SCREEN -->
+    <section id="botScreen" class="screen hidden">
+
+        <div class="game-card">
+
+            <button class="back-btn" onclick="goHome()">
+                ← Back
+            </button>
+
+            <h2>🤖 Play vs Bot</h2>
+
+            <div class="difficulty">
+
+                <button onclick="setDifficulty('easy')">
+                    Easy
+                </button>
+
+                <button onclick="setDifficulty('medium')">
+                    Medium
+                </button>
+
+                <button onclick="setDifficulty('hard')" class="selected">
+                    Hard
+                </button>
+
+            </div>
+
+            <div class="players">
+                <span>❌ You</span>
+                <span>⭕ Bot</span>
+            </div>
+
+            <div id="botStatus" class="status">
+                Your turn
+            </div>
+
+            <div id="botBoard" class="board"></div>
+
+            <button class="restart-btn" onclick="restartBotGame()">
+                🔄 Restart
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ONLINE SCREEN -->
+    <section id="onlineScreen" class="screen hidden">
+
+        <div class="menu-card">
+
+            <button class="back-btn" onclick="goHome()">
+                ← Back
+            </button>
+
+            <h2>🌐 Online Multiplayer</h2>
+
+            <button class="menu-btn primary" onclick="createRoom()">
+                Create Room
+            </button>
+
+            <div class="divider">
+                OR
+            </div>
+
+            <input
+                id="roomInput"
+                type="text"
+                maxlength="6"
+                placeholder="Enter Room Code"
+            >
+
+            <button class="menu-btn" onclick="joinRoom()">
+                Join Room
+            </button>
+
+            <p id="onlineStatus" class="status"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ONLINE GAME -->
+    <section id="onlineGameScreen" class="screen hidden">
+
+        <div class="game-card">
+
+            <h2>🌐 Online Game</h2>
+
+            <div class="room-display">
+                Room:
+                <strong id="roomCodeDisplay">------</strong>
+            </div>
+
+            <div class="players">
+                <span>❌ X</span>
+                <span>⭕ O</span>
+            </div>
+
+            <div id="onlineStatusGame" class="status">
+                Waiting for opponent...
+            </div>
+
+            <div id="onlineBoard" class="board"></div>
+
+            <button class="restart-btn" onclick="leaveRoom()">
+                Leave Game
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        <p>© 2026 Tic Tac Toe</p>
+    </footer>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
