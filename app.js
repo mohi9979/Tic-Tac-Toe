@@ -1,6 +1,18 @@
-// ========================================
-// SCREEN MANAGEMENT
-// ========================================
+const firebaseConfig = {
+  apiKey: "AIzaSyCLhpnci6po9caHAl_M_Yj-YQqx3wiUdOo",
+  authDomain: "tic-tac-toe-online-cdcdc.firebaseapp.com",
+  databaseURL: "https://tic-tac-toe-online-cdcdc-default-rtdb.firebaseio.com",
+  projectId: "tic-tac-toe-online-cdcdc",
+  storageBucket: "tic-tac-toe-online-cdcdc.firebasestorage.app",
+  messagingSenderId: "595792486870",
+  appId: "1:595792486870:web:1d606c013355ef0d5ac477",
+  measurementId: "G-ZFRV4PPLZ3"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+const database = firebase.database();
+
 
 const homeScreen = document.getElementById("homeScreen");
 const botScreen = document.getElementById("botScreen");
